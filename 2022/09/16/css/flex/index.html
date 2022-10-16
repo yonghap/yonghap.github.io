@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        CSS Flex(Flexible Box) 정리 |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="/scripts/prettify.js"></script>
+    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            <img src="/images/logo.png" alt="gameb">
+        </a>
+    </h1>
+    <nav class="menu">
+        
+            <a href="/categories/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/css" class="menu__item">
+                css<small>
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/vue" class="menu__item">
+                vue<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/php" class="menu__item">
+                php<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/solution" class="menu__item">
+                solution<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            CSS Flex(Flexible Box) 정리
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+        </div>
+        <div class="post__content">
+            <p>우리는 가로형 레이아웃을 잡을 때 float, inline-block을 사용했습니다.<br>또는 극단적으로 absolute 포지션을 사용하기도 했습니다.<br>이는 구현은 가능할 수 있으나 css의 의미있는 사용도 안될뿐더러 불편하거나 유연하지 못합니다.</p>
+<p>float은 콘텐츠를 부유해서 보여주고 inline-block은 다른 콘텐츠와의 배치를 결정하는데 쓰입니다.<br>absolute 포지션을 절대적인 위치값을 가진 요소를 나타내는데 쓰입니다.</p>
+<p>Flex는 요소의 정렬과 배치를 행과 열로 구분하여 효과적으로 할 수 있는 CSS 레이아웃 모델입니다.</p>
+<p><img src="/images/post/flex1.gif" alt="flex"></p>
+<p>IE10~11에서 일부 지원합니다.<br>기타 모던 브라우저에서는 모두 지원합니다.</p>
+<h3 id="1-기본-HTML-구조"><a href="#1-기본-HTML-구조" class="headerlink" title="1.기본 HTML 구조"></a>1.기본 HTML 구조</h3><p>아래와 같은 기본 HTML 구조로 진행합니다.</p>
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;item item--1&quot;&gt;</span><br><span class="line">		1 &lt;br&gt;</span><br><span class="line">		Lorem &lt;br&gt;</span><br><span class="line">		ipsum</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;item item--2&quot;&gt;</span><br><span class="line">		2&lt;br&gt;</span><br><span class="line">		Lorem ipsum dolor sit amet.</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;item item--3&quot;&gt;</span><br><span class="line">		3 &lt;br&gt;</span><br><span class="line">		Lorem ipsum dolor sit amet, &lt;br&gt;</span><br><span class="line">		consectetur adipisicing elit. Hic, voluptatem?</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;item item--4&quot;&gt;</span><br><span class="line">		4 &lt;br&gt;</span><br><span class="line">		Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;br&gt;</span><br><span class="line">		iste molestias reiciendis sint suscipit!</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;item item--5&quot;&gt;</span><br><span class="line">		5 &lt;br&gt;</span><br><span class="line">		Lorem ipsum dolor sit amet, &lt;br&gt;</span><br><span class="line">		consectetur adipisicing.</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	<span class="selector-class">.box</span> &#123;</span><br><span class="line">		<span class="attribute">display</span>:flex;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.item</span> &#123;</span><br><span class="line">		<span class="attribute">padding</span>:<span class="number">20px</span> <span class="number">10px</span>;</span><br><span class="line">		<span class="attribute">color</span>:<span class="number">#fff</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.item</span><span class="selector-pseudo">:first</span>-letter &#123;<span class="attribute">font-size</span>:<span class="number">50px</span>&#125;</span><br><span class="line">	<span class="selector-class">.item--1</span> &#123;<span class="attribute">background</span>:<span class="number">#0080cc</span>;&#125;</span><br><span class="line">	<span class="selector-class">.item--2</span> &#123;<span class="attribute">background</span>:<span class="number">#cc3a2f</span>;&#125;</span><br><span class="line">	<span class="selector-class">.item--3</span> &#123;<span class="attribute">background</span>:<span class="number">#01cc49</span>;&#125;</span><br><span class="line">	<span class="selector-class">.item--4</span> &#123;<span class="attribute">background</span>:<span class="number">#cca514</span>;&#125;</span><br><span class="line">	<span class="selector-class">.item--5</span> &#123;<span class="attribute">background</span>:<span class="number">#9a25cc</span>;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>.box(Flex Container)</strong> : Flex Item을 감싸고 있는 영역입니다.<br><strong>.item(Flex Item)</strong> : Flex Item 입니다.</p>
+</blockquote>
+<p>Flex에서 사용할 수 있는 CSS는 컨테이너에 적용하는 속성과, 아이템에 적용하는 속성으로 나뉘어 있습니다.</p>
+<h5 id="RESULT"><a href="#RESULT" class="headerlink" title="RESULT"></a>RESULT</h5><h6 id="화면에-넘치지-않을-때"><a href="#화면에-넘치지-않을-때" class="headerlink" title="화면에 넘치지 않을 때"></a>화면에 넘치지 않을 때</h6><p><img src="/images/post/flex2.gif" alt="flex"></p>
+<h6 id="화면에-넘치지-않을-때-1"><a href="#화면에-넘치지-않을-때-1" class="headerlink" title="화면에 넘치지 않을 때"></a>화면에 넘치지 않을 때</h6><p><img src="/images/post/flex3.gif" alt="flex"></p>
+<p>flex 속성 추가만으로 float이나 inline-block으로 만들었던 레이아웃을 쉽게 만들 수 있습니다.<br>요소의 넓이에 따라 배치되며, 넘칠때에는 아래로 떨어지지 않고 자연스럽게 줄어듭니다.</p>
+<h3 id="2-컨테이너에-적용하는-Flex"><a href="#2-컨테이너에-적용하는-Flex" class="headerlink" title="2.컨테이너에 적용하는 Flex"></a>2.컨테이너에 적용하는 Flex</h3><h4 id="flex-direction-direction-기본값-row"><a href="#flex-direction-direction-기본값-row" class="headerlink" title="- flex-direction:(direction, 기본값 row)"></a>- flex-direction:(direction, 기본값 row)</h4><p>item 요소의 정렬 방향을 결정합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		flex-direction:row-reverse; //요소 방향 -&gt; (기본값)</span><br><span class="line">		flex-direction:row-reverse; //요소 방향 &lt;-</span><br><span class="line">		flex-direction:column; //요소 방향 ↓</span><br><span class="line">		flex-dirction:column-reverse; //요소 방향 ↑</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="flex-direction-row"><a href="#flex-direction-row" class="headerlink" title="flex-direction:row"></a>flex-direction:row</h6><p><img src="/images/post/flex4.gif" alt="flex"></p>
+<h6 id="flex-direction-row-reverse"><a href="#flex-direction-row-reverse" class="headerlink" title="flex-direction:row-reverse"></a>flex-direction:row-reverse</h6><p><img src="/images/post/flex5.gif" alt="flex"></p>
+<h6 id="flex-direction-column"><a href="#flex-direction-column" class="headerlink" title="flex-direction:column"></a>flex-direction:column</h6><p><img src="/images/post/flex6.gif" alt="flex"></p>
+<h6 id="flex-direction-column-reverse"><a href="#flex-direction-column-reverse" class="headerlink" title="flex-direction:column-reverse"></a>flex-direction:column-reverse</h6><p><img src="/images/post/flex7.gif" alt="flex"></p>
+<h4 id="flex-wrap-wrap-nowrap-기본값-nowrap"><a href="#flex-wrap-wrap-nowrap-기본값-nowrap" class="headerlink" title="- flex-wrap:(wrap,nowrap, 기본값 nowrap)"></a>- flex-wrap:(wrap,nowrap, 기본값 nowrap)</h4><p>넘치는 item 요소에 대하여 표시 방법을 결정합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		flex-wrap:wrap; //넘칠 경우 줄바꿈 합니다.</span><br><span class="line">		flex-wrap:nowrap; //컨테이너 폭에 맞게 줄어듭니다.</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="flex-wrap-wrap"><a href="#flex-wrap-wrap" class="headerlink" title="flex-wrap:wrap"></a>flex-wrap:wrap</h6><p><img src="/images/post/flex8.gif" alt="flex"></p>
+<h4 id="flex-flow-direction-wrap"><a href="#flex-flow-direction-wrap" class="headerlink" title="- flex-flow:(direction wrap)"></a>- flex-flow:(direction wrap)</h4><p>아래와 같이 축약 속성으로 사용합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .box &#123;</span><br><span class="line">        flex-flow:row wrap;</span><br><span class="line">        flex-flow:column nowrap;</span><br><span class="line">        flex-flow:row-reverse wrap;</span><br><span class="line">        flex-flow:column-reverse nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="justify-content-align"><a href="#justify-content-align" class="headerlink" title="- justify-content:(align)"></a>- justify-content:(align)</h4><p>메인축 방향의 아이템들을 정렬 방식 속성입니다.<br>메인축과 교차축은 flex-direction에 따라 달라집니다.<br>정렬 확인을 위해 아이템에 flex-basis로 넓이값을 주었습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		display:flex;</span><br><span class="line">		justify-content:flex-start;</span><br><span class="line">		justify-content:flex-end;</span><br><span class="line">		justify-content:center;</span><br><span class="line">		justify-content:space-between;</span><br><span class="line">		justify-content:space-around;</span><br><span class="line">		justify-content:space-evenly;</span><br><span class="line">	&#125;</span><br><span class="line">	.item &#123;</span><br><span class="line">		flex-basis:150px;</span><br><span class="line">		padding:20px 10px;</span><br><span class="line">		color:#fff;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="justify-content-flex-start"><a href="#justify-content-flex-start" class="headerlink" title="justify-content:flex-start"></a>justify-content:flex-start</h6><p><img src="/images/post/flex9.gif" alt="flex"></p>
+<p>초기값입니다.</p>
+<h6 id="justify-content-flex-end"><a href="#justify-content-flex-end" class="headerlink" title="justify-content:flex-end"></a>justify-content:flex-end</h6><p><img src="/images/post/flex10.gif" alt="flex"></p>
+<p>메인축의 끝부터 정렬 합니다.</p>
+<h6 id="justify-content-flex-center"><a href="#justify-content-flex-center" class="headerlink" title="justify-content:flex-center"></a>justify-content:flex-center</h6><p><img src="/images/post/flex11.gif" alt="flex"></p>
+<p>가운데 정렬합니다.</p>
+<h6 id="justify-content-space-between"><a href="#justify-content-space-between" class="headerlink" title="justify-content:space-between"></a>justify-content:space-between</h6><p><img src="/images/post/flex12.gif" alt="flex"></p>
+<p>아이템을 좌우끝에 붙이고 나머지 공간은 균등 분배합니다.</p>
+<h6 id="justify-content-space-around"><a href="#justify-content-space-around" class="headerlink" title="justify-content:space-around"></a>justify-content:space-around</h6><p><img src="/images/post/flex13.gif" alt="flex"></p>
+<p>아이템을 감싸고 있는 여백을 균등 분배합니다.</p>
+<h6 id="justify-content-space-evenly"><a href="#justify-content-space-evenly" class="headerlink" title="justify-content:space-evenly"></a>justify-content:space-evenly</h6><p><img src="/images/post/flex14.gif" alt="flex"></p>
+<p>모든 여백을 균등 분배합니다.</p>
+<h4 id="align-items-align"><a href="#align-items-align" class="headerlink" title="- align-items:(align)"></a>- align-items:(align)</h4><p>교차축 방향의 아이템들을 정렬 방식 속성입니다.<br>이해하기 쉽게 justify-content는 가로 정렬, align-items는 세로 정렬로 이해합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		display:flex;</span><br><span class="line">		align-items:stretch;</span><br><span class="line">		align-items:flex-start;</span><br><span class="line">		align-items:flex-end;</span><br><span class="line">		align-items:center;</span><br><span class="line">		align-items:baseline;</span><br><span class="line">	&#125;</span><br><span class="line">	.item &#123;</span><br><span class="line">		flex-basis:150px;</span><br><span class="line">		padding:20px 10px;</span><br><span class="line">		color:#fff;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="align-items-stretch"><a href="#align-items-stretch" class="headerlink" title="align-items:stretch"></a>align-items:stretch</h6><p><img src="/images/post/flex15.gif" alt="flex"></p>
+<p>교차축을 꽉채워서 정렬합니다.</p>
+<h6 id="align-items-flex-start"><a href="#align-items-flex-start" class="headerlink" title="align-items:flex-start"></a>align-items:flex-start</h6><p><img src="/images/post/flex16.gif" alt="flex"></p>
+<p>교차축 시작점으로 정렬합니다.</p>
+<h6 id="align-items-flex-end"><a href="#align-items-flex-end" class="headerlink" title="align-items:flex-end"></a>align-items:flex-end</h6><p><img src="/images/post/flex17.gif" alt="flex"></p>
+<p>교차축 끝점으로 정렬합니다.</p>
+<h6 id="align-items-center"><a href="#align-items-center" class="headerlink" title="align-items:center"></a>align-items:center</h6><p><img src="/images/post/flex18.gif" alt="flex"></p>
+<p>교차축 중앙에 정렬합니다.</p>
+<h6 id="align-items-baseline"><a href="#align-items-baseline" class="headerlink" title="align-items:baseline"></a>align-items:baseline</h6><p><img src="/images/post/flex19.gif" alt="flex"></p>
+<p>텍스트 베이스라인 기준으로 정렬합니다.</p>
+<h4 id="align-content-align"><a href="#align-content-align" class="headerlink" title="- align-content:(align)"></a>- align-content:(align)</h4><p>flex-wrap 속성으로 줄바꿈된 아이템들을 정렬합니다.<br>컨테이너에 높이값을 주었고, 아이템의 줄바꿈 되기위해 flex-basis 값을 주었습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		display:flex;</span><br><span class="line">		height:600px;</span><br><span class="line">		flex-wrap:wrap;</span><br><span class="line">		align-content:stretch;</span><br><span class="line">		align-content:flex-start;</span><br><span class="line">		align-content:flex-end;</span><br><span class="line">		align-content:center;</span><br><span class="line">		align-content:space-between;</span><br><span class="line">		align-content:space-around;</span><br><span class="line">		align-content:space-evenly;</span><br><span class="line">	&#125;</span><br><span class="line">	.item &#123;</span><br><span class="line">		flex-basis:320px;</span><br><span class="line">		padding:20px 10px;</span><br><span class="line">		color:#fff;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="align-content-stretch"><a href="#align-content-stretch" class="headerlink" title="align-content:stretch"></a>align-content:stretch</h6><p><img src="/images/post/flex20.gif" alt="flex"></p>
+<p>교차축을 꽉채워서 정렬합니다.</p>
+<h6 id="align-content-flex-start"><a href="#align-content-flex-start" class="headerlink" title="align-content:flex-start"></a>align-content:flex-start</h6><p><img src="/images/post/flex21.gif" alt="flex"></p>
+<p>교차축을 시작점으로 정렬합니다.</p>
+<h6 id="align-content-flex-end"><a href="#align-content-flex-end" class="headerlink" title="align-content:flex-end"></a>align-content:flex-end</h6><p><img src="/images/post/flex22.gif" alt="flex"></p>
+<p>교차축을 끝점으로 정렬합니다.</p>
+<h6 id="align-content-center"><a href="#align-content-center" class="headerlink" title="align-content:center"></a>align-content:center</h6><p><img src="/images/post/flex23.gif" alt="flex"></p>
+<p>교차축을 중앙으로 정렬합니다.</p>
+<h6 id="align-content-space-between"><a href="#align-content-space-between" class="headerlink" title="align-content:space-between"></a>align-content:space-between</h6><p><img src="/images/post/flex24.gif" alt="flex"></p>
+<p>아이템을 교차점 시작과 끝에 붙이고 나머지 공간은 균등 분배합니다.</p>
+<h6 id="align-content-space-around"><a href="#align-content-space-around" class="headerlink" title="align-content:space-around"></a>align-content:space-around</h6><p><img src="/images/post/flex25.gif" alt="flex"></p>
+<p>아이템을 둘레를 균등 분배합니다.</p>
+<h6 id="align-content-space-evenly"><a href="#align-content-space-evenly" class="headerlink" title="align-content:space-evenly"></a>align-content:space-evenly</h6><p><img src="/images/post/flex26.gif" alt="flex"></p>
+<p>모든 여백을 균등 분배합니다.</p>
+<h3 id="3-아이템에-적용하는-Flex"><a href="#3-아이템에-적용하는-Flex" class="headerlink" title="3.아이템에 적용하는 Flex"></a>3.아이템에 적용하는 Flex</h3><h4 id="flex-grow-number-기본값-0"><a href="#flex-grow-number-기본값-0" class="headerlink" title="- flex-grow:(number, 기본값 0)"></a>- flex-grow:(number, 기본값 0)</h4><p>아이템이 공간내에서 가지는 비율을 결정합니다.<br>값은 px이 아닌 비율이며, 아이템들이 빈 공간이 없게 풀로 표시됩니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.item--1 &#123;</span><br><span class="line">		flex-grow:3;</span><br><span class="line">		background:#0080cc;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--2 &#123;</span><br><span class="line">		flex-grow:1;</span><br><span class="line">		background:#cc3a2f;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--3 &#123;</span><br><span class="line">		flex-grow:2;</span><br><span class="line">		background:#01cc49;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--4 &#123;</span><br><span class="line">		flex-grow:1;</span><br><span class="line">		background:#cca514;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--5 &#123;</span><br><span class="line">		flex-grow:2;</span><br><span class="line">		background:#9a25cc;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/post/flex27.gif" alt="flex"></p>
+<h4 id="flex-shrink-number-초기값-1"><a href="#flex-shrink-number-초기값-1" class="headerlink" title="- flex-shrink:(number, 초기값 1)"></a>- flex-shrink:(number, 초기값 1)</h4><p>아이템이 넘칠때 요소를 어떻게 처리할지 결정합니다.<br>flex-basis 속성과 같이 쓰입니다.<br>값이 0이라면 아이템이 넘쳐도 넓이가 flex-basis 값 밑으로 떨어지지 않습니다.<br>flex-grow는 확대 비율, flex-shrink는 축소 비율이라고 생각하면 쉽습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		display:flex;</span><br><span class="line">		width:500px;</span><br><span class="line">	&#125;</span><br><span class="line">	.item &#123;</span><br><span class="line">		flex-basis:150px;</span><br><span class="line">		padding:20px 10px;</span><br><span class="line">		color:#fff;</span><br><span class="line">	&#125;</span><br><span class="line">	.item:first-letter &#123;font-size:50px&#125;</span><br><span class="line">	.item--1 &#123;</span><br><span class="line">		flex-shrink:0;</span><br><span class="line">		background:#0080cc;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--2 &#123;</span><br><span class="line">		flex-shrink:2;</span><br><span class="line">		background:#cc3a2f;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/post/flex28.gif" alt="flex"></p>
+<p>컨테이너의 넓이값 500px을 주고, 각 아이템의 넓이는 flext-basis로 150px로 선언했습니다.<br>컨테이너의 넓이값을 넘어가게 되므로 각각의 아이템들을 500px내에서 유연하게 넓이값을 가지게 됩니다.<br>하지만 flex-shrink을 0으로 지정함으로써 넓이를 고정할 수 있습니다.</p>
+<h4 id="flex-basis-number-초기값-auto"><a href="#flex-basis-number-초기값-auto" class="headerlink" title="- flex-basis:(number, 초기값 auto)"></a>- flex-basis:(number, 초기값 auto)</h4><p>아이템의 크기를 설정합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		display:flex;</span><br><span class="line">	&#125;</span><br><span class="line">	.item &#123;</span><br><span class="line">		flex-basis:500px;</span><br><span class="line">		padding:20px 10px;</span><br><span class="line">		color:#fff;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/post/flex29.gif" alt="flex"></p>
+<p>flex-wrap가 선언되어 있지 않아서 넘치는 부분은 유연하게 넓이가 조절됩니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		display:flex;</span><br><span class="line">		flex-wrap:wrap;</span><br><span class="line">	&#125;</span><br><span class="line">	.item &#123;</span><br><span class="line">		flex-basis:500px;</span><br><span class="line">		padding:20px 10px;</span><br><span class="line">		color:#fff;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/images/post/flex30.gif" alt="flex"></p>
+<p>flex-wrap가 선언되어 flex-basis에 적용된 넓이대로 표시됩니다.</p>
+<h4 id="flex-flex-grow-flex-shrink-flex-basis"><a href="#flex-flex-grow-flex-shrink-flex-basis" class="headerlink" title="- flex:(flex-grow, flex-shrink, flex-basis)"></a>- flex:(flex-grow, flex-shrink, flex-basis)</h4><p>세 가지 속성을 한번에 선언할 수 있습니다.<br>선언한 매개변수 숫자에 따라 적용되는 속성이 다릅니다.</p>
+<h5 id="값이-한-개일-때"><a href="#값이-한-개일-때" class="headerlink" title="값이 한 개일 때"></a>값이 한 개일 때</h5><p>숫자를 지정하면 flex-grow 입니다.<br>길이 또는 퍼센트를 지정하면 flex-basis입니다.<br>none, auto, initial 중 하나를 지정할 수 있습니다.</p>
+<h5 id="값이-두-개일-때"><a href="#값이-두-개일-때" class="headerlink" title="값이 두 개일 때"></a>값이 두 개일 때</h5><p>첫 번째 값은 숫자이고 flex-grow입니다.<br>두 번재 값은 숫자를 지정하면 flex-shrink 입니다.<br>길이 또는 퍼센트, auto를 지정하면 flex-basis 입니다.</p>
+<h5 id="값이-세-개일-때"><a href="#값이-세-개일-때" class="headerlink" title="값이 세 개일 때"></a>값이 세 개일 때</h5><p>flex-grow, flex-shrink, flex-basis 순입니다.</p>
+<h5 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h5><blockquote>
+<p><strong>flex:initial</strong> : flex:0 1 auto 동일<br><strong>flex:auto</strong> : flex:1 1 auto 동일<br><strong>flex:none</strong> : flex:0 0 auto 동일</p>
+</blockquote>
+<h4 id="align-self-align"><a href="#align-self-align" class="headerlink" title="- align-self:(align)"></a>- align-self:(align)</h4><p>컨테이너에서 적용했던 align-items의 아이템 버전입니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.box &#123;</span><br><span class="line">		display:flex;</span><br><span class="line">	&#125;</span><br><span class="line">	.item &#123;</span><br><span class="line">		flex-basis:350px;</span><br><span class="line">		padding:20px 10px;</span><br><span class="line">		color:#fff;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--3 &#123;</span><br><span class="line">		align-self:center;</span><br><span class="line">		background:#01cc49;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="align-self-center"><a href="#align-self-center" class="headerlink" title="align-self:center"></a>align-self:center</h6><p><img src="/images/post/flex31.gif" alt="flex"></p>
+<h4 id="order-order"><a href="#order-order" class="headerlink" title="- order:(order)"></a>- order:(order)</h4><p>아이템의 순서를 정합니다.<br>마크업 구조는 바뀌지 않습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.item--1 &#123;</span><br><span class="line">		order:4;</span><br><span class="line">		background:#0080cc;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--2 &#123;</span><br><span class="line">		order:2;</span><br><span class="line">		background:#cc3a2f;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--3 &#123;</span><br><span class="line">		align-self:center;</span><br><span class="line">		order:1;</span><br><span class="line">		background:#01cc49;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--4 &#123;</span><br><span class="line">		order:5;</span><br><span class="line">		background:#cca514;</span><br><span class="line">	&#125;</span><br><span class="line">	.item--5 &#123;</span><br><span class="line">		order:5;</span><br><span class="line">		background:#9a25cc;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/post/flex32.gif" alt="flex"></p>
+
+        </div>
+        <div class="ads">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                    crossorigin="anonymous"></script>
+            <!-- 상하단 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8286119789134861"
+                 data-ad-slot="2771009740"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+			    (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        gameb 2022
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>
