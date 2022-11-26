@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        Vue + Nuxt 날씨 서비스 만들기 - 2.디자인과 기본 세팅 |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="/scripts/prettify.js"></script>
+    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            <img src="/images/logo.png" alt="gameb">
+        </a>
+    </h1>
+    <nav class="menu">
+        
+            <a href="/categories/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/css" class="menu__item">
+                css<small>
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/vue" class="menu__item">
+                vue<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (3)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/php" class="menu__item">
+                php<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/categories/solution" class="menu__item">
+                solution<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            Vue + Nuxt 날씨 서비스 만들기 - 2.디자인과 기본 세팅
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+        </div>
+        <div class="post__content">
+            <p>본격적인 코딩전에 디자인을 확인하겠습니다.<br>피그마로 작업합니다.</p>
+<h3 id="1-디자인"><a href="#1-디자인" class="headerlink" title="1.디자인"></a>1.디자인</h3><p><img src="/images/post/forecast.jpg" alt="flex"></p>
+<p>무료 피그마 템플릿 사이트에 있는 Weather App 템플릿을 참고하였습니다.<br>참고한 템플릿 주소 : <a href="https://figmaelements.com/weather-app-concept/" target="_blank" rel="noopener noreferrer">https://figmaelements.com/weather-app-concept</a></p>
+<h3 id="2-페이지-구성"><a href="#2-페이지-구성" class="headerlink" title="2.페이지 구성"></a>2.페이지 구성</h3><p>페이지와 레이아웃은 모두 인트로와 상세 페이지로 구성합니다.<br>&#x2F;pages, &#x2F;layouts</p>
+<h3 id="3-컴포넌트-구성"><a href="#3-컴포넌트-구성" class="headerlink" title="3.컴포넌트 구성"></a>3.컴포넌트 구성</h3><p><img src="/images/post/forecast2.jpg" alt="flex"></p>
+<p>각 섹션별로 컴포넌트로 구성하고 하위 컴포넌트는 코딩을 진행하면서<br>필요할시에 만들도록 하겠습니다.<br>&#x2F;components</p>
+<h3 id="4-날씨-API"><a href="#4-날씨-API" class="headerlink" title="4.날씨 API"></a>4.날씨 API</h3><p>api는 <a href="https://openweathermap.org" target="_target" rel="noopener noreferrer">https://openweathermap.org</a> 의 api를 사용합니다.<br>분당 호출수가 제한이 있긴 하지만 무료입니다.<br>현재 날씨와 앞으로의 예보까지 확인할 수 있는 OneCall API를 활용하고,<br>미세먼지 예보는 Air Pollution를 활용합니다.<br>추가로 현재 위치 추적을 위해 Geo API도 활용할 수 있습니다.</p>
+<h3 id="5-비동기-호출"><a href="#5-비동기-호출" class="headerlink" title="5.비동기 호출"></a>5.비동기 호출</h3><p>Nuxt 설치시 사용설정을 했던 @nuxt&#x2F;axios를 사용합니다.<br><a href="https://www.npmjs.com/package/@nuxtjs/axios" target="_blank" rel="noopener noreferrer">https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;@nuxtjs&#x2F;axios</a></p>
+<h3 id="6-Store"><a href="#6-Store" class="headerlink" title="6.Store"></a>6.Store</h3><p>store에는 현재 내 위치 기본으로 저장하고,<br>진행하면서 필요할시에 추가해나갑니다.</p>
+<h3 id="7-CSS"><a href="#7-CSS" class="headerlink" title="7.CSS"></a>7.CSS</h3><p>SCSS를 사용합니다.<br>컴포넌트 별로 CSS를 선언하지 않고 공통 CSS 한벌을 사용합니다.</p>
+<p>기본적인 정의와 세팅은 모두 끝났습니다.<br>이제 본격적인 코딩을 해보도록 하겠습니다.</p>
+
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        gameb 2022
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>

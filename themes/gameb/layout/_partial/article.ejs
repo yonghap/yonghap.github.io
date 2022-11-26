@@ -1,0 +1,29 @@
+<section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            <%= post.title %>
+        </h2>
+        <div class="post__category">
+            <%- list_tags(post.tags, {
+                show_count: false,
+                class: 'tags'
+            }) %>
+        </div>
+        <div class="post__content">
+            <%- post.content %>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+

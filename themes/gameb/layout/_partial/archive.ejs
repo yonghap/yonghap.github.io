@@ -1,0 +1,30 @@
+<section class="section">
+    <ul class="list">
+    <% page.posts.each(function(post, i){ %>
+        <li>
+            <a href="/<%= post.path %>">
+                <%= post.title %>
+            </a>
+            <div class="list__category">
+                  <%- list_tags(post.tags, {
+                      show_count: false,
+                      class: 'tags'
+                  }) %>
+            </div>
+            <div class="list__date">
+				<%= date(post.date, 'yy-MM-DD') %>
+            </div>
+        </li>
+    <% }) %>
+    </ul>
+</section>
+<nav class="pager">
+    <span class="pager__number">
+        <span><%= page.current %></span> / <span><%= page.total %></span>
+    </span>
+    <% var prev_text = "← 이전"; var next_text = "다음 →" %>
+    <%- paginator({
+        prev_text: prev_text,
+        next_text: next_text
+    }) %>
+</nav>
