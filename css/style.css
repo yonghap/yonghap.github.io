@@ -54,7 +54,8 @@ div, p, li, span, a {word-break:keep-all}
 .post__content ul li {position:relative;padding-left:12px;font-size:0.8em;font-weight:500}
 .post__content ul li:before {content:'-';position:absolute;top:0;left:0}
 .post__content ul strong {font-weight:bold}
-.prettyprint {overflow-x:scroll;font-size:14px;margin:15px 0;padding:20px}
+.prettyprint {font-size:14px;margin:15px 0;padding:20px;tab-size:4}
+.red .prettyprint {border:20px solid #dcb9b9}
 .highlight table {table-layout:fixed;width:100%}
 .highlight table td.gutter {display:none}
 blockquote {margin:14px 0;border-left-width:10px;background-color:rgba(128, 128, 128, 0.05);padding:15px 20px;border-left:5px solid rgba(128, 128, 128, 0.075);font-size:1rem}
@@ -90,4 +91,5 @@ blockquote strong {font-weight:bold}
 	.post__content h5 {margin:25px 0 5px;font-size:1.2em;line-height:1.3}
 	.post__content h6 {margin:15px 0 5px;font-size:1.1em;line-height:1.3}
 	.prettyprint {font-size:13px}
+	.prettyprint {overflow-x:scroll}
 }
