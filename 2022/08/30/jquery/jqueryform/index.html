@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        jQuery 폼 컨트롤 정리 (input, radio, checkbox) |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <meta name="google-site-verification" content="RN4FF8s7gR0MnH8v5iUghGiImkXF-N52CM0zQ0af6xU" />
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="/scripts/prettify.js"></script>
+    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            gameb
+        </a>
+    </h1>
+    <nav class="menu">
+        <a href="/" class="menu__item">
+            profile
+        </a>
+        
+            <a href="/tags/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/css" class="menu__item">
+                css<small>
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/vue" class="menu__item">
+                vue<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/php" class="menu__item">
+                php<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/solution" class="menu__item">
+                solution<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            jQuery 폼 컨트롤 정리 (input, radio, checkbox)
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/jquery/" rel="tag">jquery</a></li></ul>
+        </div>
+        <div class="post__content">
+            <p>jQuery를 사용한 폼 요소의 컨트롤을 정리해 보겠습니다.<br>폼 요소는 input text, radio, checkbox, select 입니다.</p>
+<h4 id="Input-Text"><a href="#Input-Text" class="headerlink" title="Input Text"></a>Input Text</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&#x27;#text&#x27;).val(); // 값 가져오기</span><br><span class="line">$(&#x27;#text&#x27;).val(&#x27;Input text&#x27;); // 값 설정하기</span><br></pre></td></tr></table></figure>
+
+<h4 id="Radio"><a href="#Radio" class="headerlink" title="Radio"></a>Radio</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fruits&quot;</span> <span class="attr">value</span>=<span class="string">&quot;orange&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fruits&quot;</span> <span class="attr">value</span>=<span class="string">&quot;banana&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fruits&quot;</span> <span class="attr">value</span>=<span class="string">&quot;apple&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;[name=fruits]:checked&#x27;</span>).<span class="title function_">val</span>(); <span class="comment">// 체크된 값 가져오기 &quot;orange&quot;</span></span><br><span class="line">$(<span class="string">&#x27;[name=fruits]&#x27;</span>).<span class="title function_">val</span>(<span class="string">&#x27;apple&#x27;</span>).<span class="title function_">prop</span>(<span class="string">&#x27;checked&#x27;</span>,<span class="literal">true</span>); <span class="comment">// 체크하기</span></span><br><span class="line">$(<span class="string">&#x27;[value=apple]&#x27;</span>).<span class="title function_">prop</span>(<span class="string">&#x27;checked&#x27;</span>,<span class="literal">true</span>); <span class="comment">// 체크하기</span></span><br><span class="line">$(<span class="string">&#x27;[value=apple]&#x27;</span>).<span class="title function_">attr</span>(<span class="string">&#x27;checked&#x27;</span>,<span class="string">&#x27;checked&#x27;</span>); <span class="comment">// 체크하기</span></span><br><span class="line">$(<span class="string">&#x27;[value=apple]&#x27;</span>).<span class="title function_">is</span>(<span class="string">&#x27;:checked&#x27;</span>); <span class="comment">// 체크 여부 확인</span></span><br></pre></td></tr></table></figure>
+
+<p>attr()과 prop()은 사용하는 경우가 다릅니다.<br>일반적으로 속성에 선언된 텍스트 그 자체를 의미할때는 attr()을 사용하고,<br>radio나 checkbox처럼 요소의 상태의 변경을 의미할때는 prop()을 사용합니다.</p>
+<h4 id="Checkbox"><a href="#Checkbox" class="headerlink" title="Checkbox"></a>Checkbox</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">id</span>=<span class="string">&quot;fruit1&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fruits&quot;</span> <span class="attr">value</span>=<span class="string">&quot;apple&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">id</span>=<span class="string">&quot;fruit2&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fruits&quot;</span> <span class="attr">value</span>=<span class="string">&quot;banana&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">id</span>=<span class="string">&quot;fruit3&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fruits&quot;</span> <span class="attr">value</span>=<span class="string">&quot;orange&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;[name=fruits]:checked&#x27;</span>).<span class="title function_">val</span>(); <span class="comment">// 첫번째 체크 값 가져오기</span></span><br><span class="line">$(<span class="string">&#x27;#fruit2&#x27;</span>).<span class="title function_">prop</span>(<span class="string">&#x27;checked&#x27;</span>,<span class="literal">true</span>); <span class="comment">// 1개 체크 &#x27;banana&#x27;</span></span><br><span class="line">$(<span class="string">&#x27;#fruit2&#x27;</span>).<span class="title function_">is</span>(<span class="string">&#x27;:checked&#x27;</span>); <span class="comment">// 체크 여부 확인</span></span><br><span class="line">$(<span class="string">&#x27;[name=fruits]&#x27;</span>).<span class="title function_">each</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">	$(<span class="variable language_">this</span>).<span class="title function_">prop</span>(<span class="string">&#x27;checked&#x27;</span>,<span class="literal">true</span>); <span class="comment">// 모든 체크박스 체크</span></span><br><span class="line">	$(<span class="variable language_">this</span>).<span class="title function_">is</span>(<span class="string">&#x27;:checked&#x27;</span>); <span class="comment">// 모든 체크박스 체크 여부 확인</span></span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">&#x27;[name=fruits]&#x27;</span>).<span class="title function_">val</span>(<span class="string">&#x27;banana&#x27;</span>).<span class="title function_">prop</span>(<span class="string">&#x27;checked&#x27;</span>,<span class="literal">true</span>); <span class="comment">// 모든 체크박스 체크</span></span><br></pre></td></tr></table></figure>
+
+<p>checkbox는 radio처럼 val()로 선택해서 체크할 수 없습니다.<br>모든 체크박스가 선택됩니다.</p>
+<h4 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;select&quot;</span> <span class="attr">id</span>=<span class="string">&quot;select&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;#&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;selected&quot;</span>&gt;</span>Select<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;orange&quot;</span>&gt;</span>Orange<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;apple&quot;</span>&gt;</span>Apple<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;Mango&quot;</span>&gt;</span>Mango<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#select option:selected&#x27;</span>).<span class="title function_">val</span>(); <span class="comment">// 선택된 값 가져오기</span></span><br><span class="line">$(<span class="string">&#x27;#select&#x27;</span>).<span class="title function_">val</span>(); <span class="comment">// 선택된 값 가져오기</span></span><br><span class="line">$(<span class="string">&#x27;#select&#x27;</span>).<span class="title function_">val</span>(<span class="string">&#x27;orange&#x27;</span>).<span class="title function_">prop</span>(<span class="string">&#x27;selected&#x27;</span>,<span class="literal">true</span>); <span class="comment">// 선택 하기 &#x27;orange&#x27;</span></span><br><span class="line">$(<span class="string">&#x27;#select&#x27;</span>).<span class="title function_">val</span>(<span class="string">&#x27;apple&#x27;</span>); <span class="comment">// 선택 하기 &#x27;apple&#x27;</span></span><br><span class="line"><span class="keyword">if</span> ( $(<span class="string">&#x27;#select&#x27;</span>).<span class="title function_">val</span>() == <span class="string">&#x27;&#x27;</span> ) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;값이 없습니다&#x27;</span>); <span class="comment">// 선택 여부 확인</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        Copyright © Gameb
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>
