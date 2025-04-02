@@ -1,14 +1,17 @@
 <header id="header" class="header">
     <h1 class="logo">
         <a href="/">
-            <img src="/images/logo.png" alt="gameb">
+            gameb
         </a>
     </h1>
     <nav class="menu">
+        <a href="/" class="menu__item">
+            profile
+        </a>
         <% for (var link in theme.menu) { %>
-            <a href="/categories<%= theme.menu[link] %>" class="menu__item">
+            <a href="/tags<%= theme.menu[link] %>" class="menu__item">
                 <%= link %><small>
-                    <% site.categories.sort('name').each(function(item){ %>
+                    <% site.tags.sort('name').each(function(item){ %>
                         <% if (item.name == link) { %>
                             <% if (!item.parent) { %>
                                 (<%= item.length %>)
