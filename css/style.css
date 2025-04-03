@@ -38,7 +38,7 @@ div, p, li, span, a {word-break:keep-all}
 .post__content {margin-top:60px;font-size:1em;color:#444}
 .post__content h1 {font-size:2.7em}
 .post__content h2 {font-size:2.3em}
-.post__content h3 {position:relative;margin:60px 0 30px;padding-left:20px;background:#fafafa;font-size:1.8em;color:#222}
+.post__content h3 {position:relative;margin:60px 0 30px;padding:5px;padding-left:20px;background:#f7f7f7;font-size:1.8em;color:#222}
 .post__content h3:before {content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:#270858}
 .post__content h4 {margin:30px 0 15px;font-size:1.6em;color:#333}
 .post__content h5 {margin:25px 0 12px;font-size:1.4em}
@@ -53,7 +53,8 @@ div, p, li, span, a {word-break:keep-all}
 .post__content ul li {position:relative;padding-left:12px;font-size:0.8em;font-weight:500}
 .post__content ul li:before {content:'-';position:absolute;top:0;left:0}
 .post__content ul strong {font-weight:bold}
-.prettyprint {margin:0;font-size:13px;padding:15px 18px;tab-size:4;line-height:1.7}
+pre.prettyprint {margin:0 !important;font-size:13px;padding:15px 18px;tab-size:4;line-height:1.5;background:#222}
+code.prettyprint, pre.prettyprint {font-weight:normal !important}
 .red .prettyprint {border:20px solid #dcb9b9}
 .highlight table {table-layout:fixed;width:100%}
 .highlight table td.gutter {display:none}
@@ -69,7 +70,7 @@ blockquote strong {font-weight:bold}
 .pager .extend.next {left:50%;margin-left:40px}
 .pager__number {position:absolute;left:0;top:0;width:100%;color:#888}
 .page-number {display:none}
-
+.tac {text-align:center}
 @media screen and (max-width:1024px) {
 	.header {display:block;padding:20px;text-align:center}
 	.logo img {width:50px}
