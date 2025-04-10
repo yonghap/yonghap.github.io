@@ -12,7 +12,7 @@
 </script>
     
     <title>
-        IR 기법 (이미지 대체 텍스트) |
+        실무에서 자주 쓰는 문자/숫자 문법 |
         
         GAMEB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -242,27 +242,38 @@
                 <section class="section">
     <div class="post">
         <h2 class="post__title">
-            IR 기법 (이미지 대체 텍스트)
+            실무에서 자주 쓰는 문자/숫자 문법
         </h2>
         <div class="post__category">
-            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
         </div>
         <div class="post__content">
-            <p>IR 기법은 이미지를 대체하여 표시할 수 있는 기법을 말합니다.<br>이미지의 alt 값이 길거나 의미 있는 이미지를 배경으로 사용할 때 주로 사용합니다.<br>크게 4가지 방법이 있습니다.</p>
-<h4 id="default"><a href="#default" class="headerlink" title="default"></a>default</h4><p>기본 alt 속성을 활용하는 방법입니다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;picture.jpg&quot; alt=&quot;사람이 의자에 앉아 책을 읽고 있는 모습&quot;&gt;</span><br></pre></td></tr></table></figure>
+            <h3 id="숫자"><a href="#숫자" class="headerlink" title="숫자"></a>숫자</h3><h4 id="숫자-gt-문자"><a href="#숫자-gt-문자" class="headerlink" title="숫자 -&gt; 문자"></a>숫자 -&gt; 문자</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let numberToString = 1541;</span><br><span class="line">var str = numberToString.toString(); </span><br><span class="line">// &quot;1541&quot;</span><br></pre></td></tr></table></figure>
 
-<p>다음과 같이 의미 없는 대체 텍스트는 지양합니다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;picture.jpg&quot; alt=&quot;사람 이미지&quot;&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="Phark-Method"><a href="#Phark-Method" class="headerlink" title="Phark Method"></a>Phark Method</h4><p>흔히 사용하는 텍스트를 날려버리는 방법입니다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	text-indent:-9999px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="문자"><a href="#문자" class="headerlink" title="문자"></a>문자</h3><h4 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h4><p>문자열을 숫자형으로 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let strToNum = &quot;1541&quot;;</span><br><span class="line">Number(strToNum);</span><br><span class="line">// 1541</span><br></pre></td></tr></table></figure>
 
-<h4 id="WA-IR"><a href="#WA-IR" class="headerlink" title="WA IR"></a>WA IR</h4><p>z-index를 활용하여 우선 순위를 내려 이미지 아래로 텍스트를 숨길 수도 있습니다.<br>태그를 추가해야 된다는 단점이 있고, position 속성에 따라 성능에 영향을 줄 수 있습니다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">button span &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">	z-index:-1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h4><p>문자열을 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.replace(&#x27;Hello&#x27;, &#x27;My&#x27;);</span><br><span class="line">// &quot;My World&quot;</span><br><span class="line"></span><br><span class="line">const regex = /Hello/i;</span><br><span class="line">console.log(str.replace(regex, &quot;New&quot;));</span><br><span class="line">// &quot;New World&quot;</span><br></pre></td></tr></table></figure>
 
-<h4 id="최신-H5BP-HTML5-Boilerplate"><a href="#최신-H5BP-HTML5-Boilerplate" class="headerlink" title="최신 H5BP (HTML5 Boilerplate)"></a>최신 H5BP (HTML5 Boilerplate)</h4><p>H5BP나 부트스트랩에서 사용하는 방법입니다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.sr-only &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	width: 1px;</span><br><span class="line">	height: 1px;</span><br><span class="line">	padding: 0;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">	clip: rect(0, 0, 0, 0);</span><br><span class="line">	white-space: nowrap;</span><br><span class="line">	clip-path: inset(50%);</span><br><span class="line">	border: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="replaceAll"><a href="#replaceAll" class="headerlink" title="replaceAll()"></a>replaceAll()</h4><p>모든 문자열을 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World, Hello Coding!&quot;;</span><br><span class="line">str.replaceAll(&#x27;Hello&#x27;, &#x27;My&#x27;);</span><br><span class="line">// &quot;My World, My Coding&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p>특정 구분자를 기준으로 문자열을 배열로 만듭니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello New World&quot;;</span><br><span class="line">str.split(&quot; &quot;);</span><br><span class="line">// [&quot;Hello&quot;, &quot;New&quot;, &quot;World&quot;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h4><p>부분 문자열을 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.substring(1, 3);</span><br><span class="line">// &quot;el&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h4><p>소문자를 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.toLowerCase();</span><br><span class="line">// &quot;hello world&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h4><p>대문자를 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.toUpperCase();</span><br><span class="line">// &quot;HELLO WORLD&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="tring-trimEnd-tringStart"><a href="#tring-trimEnd-tringStart" class="headerlink" title="tring(), trimEnd(), tringStart()"></a>tring(), trimEnd(), tringStart()</h4><p>공백을 제거하고 새로운 문자열을 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const str = &quot;   Hello World!   &quot;;</span><br><span class="line">str.trim(); // &quot;Hello World!&quot;</span><br><span class="line">str.trimEnd(); // &quot;   Hello World!&quot;</span><br><span class="line">str.trimStart(); // &quot;Hello World!   &quot;</span><br></pre></td></tr></table></figure>
         </div>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
                 crossorigin="anonymous"></script>
