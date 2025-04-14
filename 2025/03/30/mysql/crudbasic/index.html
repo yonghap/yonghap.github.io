@@ -12,7 +12,7 @@
 </script>
     
     <title>
-        SELECT, INSERT, UPDATE, DELETE 문법 정리 |
+        실무에서 자주 쓰는 CRUD 문법 |
         
         GAMEB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -79,7 +79,7 @@
                     
                         
                             
-                                (7)
+                                (6)
                             
                         
                     
@@ -242,7 +242,7 @@
                 <section class="section">
     <div class="post">
         <h2 class="post__title">
-            SELECT, INSERT, UPDATE, DELETE 문법 정리
+            실무에서 자주 쓰는 CRUD 문법
         </h2>
         <div class="post__category">
             <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
@@ -261,7 +261,7 @@
 <h5 id="여러개의-검색어-조회"><a href="#여러개의-검색어-조회" class="headerlink" title="여러개의 검색어 조회"></a>여러개의 검색어 조회</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM user_name WHERE user_name LIKE &quot;%park%lee%&quot;;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="NSERT"><a href="#NSERT" class="headerlink" title="NSERT"></a>NSERT</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO 테이블이름 (필드명1,필드명2...) VALUES (값1,값2...)</span><br><span class="line">INSERT INTO 테이블이름 VALUES (값1,값2...)</span><br><span class="line">INSERT INTO user (id,name) VALUES (&#x27;1&#x27;,&#x27;park&#x27;);</span><br><span class="line">INSERT INTO user VALUES (&#x27;1&#x27;,&#x27;park&#x27;);</span><br></pre></td></tr></table></figure>
+<h3 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO 테이블이름 (필드명1,필드명2...) VALUES (값1,값2...)</span><br><span class="line">INSERT INTO 테이블이름 VALUES (값1,값2...)</span><br><span class="line">INSERT INTO user (id,name) VALUES (&#x27;1&#x27;,&#x27;park&#x27;);</span><br><span class="line">INSERT INTO user VALUES (&#x27;1&#x27;,&#x27;park&#x27;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UPDATE 테이블이름 SET 필드이름1 = 필드값1, 필드이름2 = 필드값2;</span><br><span class="line">UPDATE 테이블이름 SET 필드이름 = 필드값 WHERE 조건식;</span><br><span class="line">UPDATE user SET user_name = &#x27;park&#x27;;</span><br><span class="line">UPDATE user SET user_name = &#x27;park&#x27; WHERE user_no = 1;</span><br></pre></td></tr></table></figure>
 

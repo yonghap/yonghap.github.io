@@ -79,7 +79,7 @@
                     
                         
                             
-                                (7)
+                                (6)
                             
                         
                     
@@ -249,20 +249,23 @@
         </div>
         <div class="post__content">
             <p>IR 기법은 이미지를 대체하여 표시할 수 있는 기법을 말합니다.<br>이미지의 alt 값이 길거나 의미 있는 이미지를 배경으로 사용할 때 주로 사용합니다.<br>크게 4가지 방법이 있습니다.</p>
-<h4 id="default"><a href="#default" class="headerlink" title="default"></a>default</h4><p>기본 alt 속성을 활용하는 방법입니다.</p>
+<h3 id="기본"><a href="#기본" class="headerlink" title="기본"></a>기본</h3><p>기본 alt 속성을 활용하는 방법입니다.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;picture.jpg&quot; alt=&quot;사람이 의자에 앉아 책을 읽고 있는 모습&quot;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>다음과 같이 의미 없는 대체 텍스트는 지양합니다.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;picture.jpg&quot; alt=&quot;사람 이미지&quot;&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="Phark-Method"><a href="#Phark-Method" class="headerlink" title="Phark Method"></a>Phark Method</h4><p>흔히 사용하는 텍스트를 날려버리는 방법입니다.</p>
+<h3 id="Phark-Method"><a href="#Phark-Method" class="headerlink" title="Phark Method"></a>Phark Method</h3><p>흔히 사용하는 텍스트를 날려버리는 방법입니다.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	text-indent:-9999px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="WA-IR"><a href="#WA-IR" class="headerlink" title="WA IR"></a>WA IR</h4><p>z-index를 활용하여 우선 순위를 내려 이미지 아래로 텍스트를 숨길 수도 있습니다.<br>태그를 추가해야 된다는 단점이 있고, position 속성에 따라 성능에 영향을 줄 수 있습니다.</p>
+<h3 id="WA-IR"><a href="#WA-IR" class="headerlink" title="WA IR"></a>WA IR</h3><p>z-index를 활용하여 우선 순위를 내려 이미지 아래로 텍스트를 숨길 수도 있습니다.<br>태그를 추가해야 된다는 단점이 있고, position 속성에 따라 성능에 영향을 줄 수 있습니다.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">button span &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">	z-index:-1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="최신-H5BP-HTML5-Boilerplate"><a href="#최신-H5BP-HTML5-Boilerplate" class="headerlink" title="최신 H5BP (HTML5 Boilerplate)"></a>최신 H5BP (HTML5 Boilerplate)</h4><p>H5BP나 부트스트랩에서 사용하는 방법입니다.</p>
+<h3 id="최신-H5BP-HTML5-Boilerplate"><a href="#최신-H5BP-HTML5-Boilerplate" class="headerlink" title="최신 H5BP (HTML5 Boilerplate)"></a>최신 H5BP (HTML5 Boilerplate)</h3><p>H5BP나 부트스트랩에서 사용하는 방법입니다.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.sr-only &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	width: 1px;</span><br><span class="line">	height: 1px;</span><br><span class="line">	padding: 0;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">	clip: rect(0, 0, 0, 0);</span><br><span class="line">	white-space: nowrap;</span><br><span class="line">	clip-path: inset(50%);</span><br><span class="line">	border: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>아래 형태를 사용하기도 합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.blind &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	clip: rect(0 0 0 0);</span><br><span class="line">	width: 1px;</span><br><span class="line">	height: 1px;</span><br><span class="line">	margin: -1px;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
                 crossorigin="anonymous"></script>
