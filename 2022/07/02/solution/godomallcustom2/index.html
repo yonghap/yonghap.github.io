@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        [고도몰] 새로운 컨트롤러 만들기 |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <meta name="google-site-verification" content="RN4FF8s7gR0MnH8v5iUghGiImkXF-N52CM0zQ0af6xU" />
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=sons-of-obsidian"></script>
+<!--    <script src="/scripts/prettify.js"></script>-->
+<!--    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">-->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/example.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            gameb
+        </a>
+    </h1>
+    <nav class="menu">
+        <a href="/" class="menu__item">
+            profile
+        </a>
+        
+            <a href="/tags/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/css" class="menu__item">
+                css<small>
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (7)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/vue" class="menu__item">
+                vue<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/php" class="menu__item">
+                php<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/solution" class="menu__item">
+                solution<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            [고도몰] 새로운 컨트롤러 만들기
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/godomall/" rel="tag">godomall</a></li><li class="tags-list-item"><a class="tags-list-link" href="/tags/solution/" rel="tag">solution</a></li></ul>
+        </div>
+        <div class="post__content">
+            <p>내 쇼핑몰&#x2F;test&#x2F;test로 접속을 위한 새로운 컨트롤러를 만들어 보겠습니다.</p>
+<h3 id="1-개발소스-관리-접속"><a href="#1-개발소스-관리-접속" class="headerlink" title="1.개발소스 관리 접속"></a>1.개발소스 관리 접속</h3><p>고도몰 관리자에 접속하여 [개발소스 관리]로 접속합니다.</p>
+<p><img src="/images/post/godomall2.gif" alt="개발소스관리"></p>
+<h3 id="2-원본소스에서-복사"><a href="#2-원본소스에서-복사" class="headerlink" title="2.원본소스에서 복사"></a>2.원본소스에서 복사</h3><p>저희가 추가할 주소는 &#x2F;test&#x2F;test 입니다.<br>우선 고도몰 원본 개발 소스에서 해당 컨트롤러를 개발작업 소스로 복사합니다.<br>로직은 아래와 같이 진행됩니다.</p>
+<ul>
+<li>[고도몰 원본소스 보기]에서 [개발 작업소스]로 복사</li>
+<li>FTP에 접속하여 해당 소스 편집 </li>
+<li>[개발 작업소스] 목록에서 [운영소스에 적용] 실행</li>
+</ul>
+<p><img src="/images/post/godomall3.gif" alt="개발소스복사"></p>
+<p>이미 고도몰 원본소스에 테스트용 컨트롤러가 있습니다.<br>복사합니다.</p>
+<p><img src="/images/post/godomall4.gif" alt="개발소스복사확인"></p>
+<p>복사된 소스를 확인합니다.<br>[적용하기] 소스를 수정한뒤 적용합니다.</p>
+<h3 id="3-소스-수정"><a href="#3-소스-수정" class="headerlink" title="3.소스 수정"></a>3.소스 수정</h3><p>위에서 복사한 컨트롤러 파일은 FTP내에 있습니다.<br>&#x2F;data&#x2F;module&#x2F;Controller&#x2F;Front&#x2F;Test<br>다운로드하여 소스 편집기 파일로 엽니다.</p>
+<h6 id="TestController-php"><a href="#TestController-php" class="headerlink" title="TestController.php"></a>TestController.php</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * This is commercial software, only users who have purchased a valid license</span><br><span class="line"> * and accept to the terms of the License Agreement can install and use this</span><br><span class="line"> * program.</span><br><span class="line"> *</span><br><span class="line"> * Do not edit or add to this file if you wish to upgrade Godomall5 to newer</span><br><span class="line"> * versions in the future.</span><br><span class="line"> *</span><br><span class="line"> * @copyright ⓒ 2016, NHN godo: Corp.</span><br><span class="line"> * @link http://www.godo.co.kr</span><br><span class="line"> */</span><br><span class="line">namespace Controller\Front\Test;</span><br><span class="line"></span><br><span class="line">class TestController extends \Bundle\Controller\Front\Test\TestController</span><br><span class="line">&#123;</span><br><span class="line">    public function index() &#123;</span><br><span class="line">	$hello = &quot;Hello World&quot;;</span><br><span class="line">	$this-&gt;setData(&#x27;hello&#x27;,$hello);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>컨트롤러 내 index 함수에 변수를 선언해주었습니다.<br>이제 저 변수는 View 페이지내에서 사용할 수 있습니다.</p>
+<h3 id="4-View-페이지-생성"><a href="#4-View-페이지-생성" class="headerlink" title="4.View 페이지 생성"></a>4.View 페이지 생성</h3><p>View 페이지를 생성할 위치 입니다.<br>&#x2F;data&#x2F;skin&#x2F;front&#x2F;스킨명&#x2F;test&#x2F;test.html<br>이전글을 참고하면 더 자세한 생성위치를 알 수 있습니다.</p>
+<h6 id="test-html"><a href="#test-html" class="headerlink" title="test.html"></a>test.html</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;=hello&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이제 도메인&#x2F;test&#x2F;test를 접속하여 확인합니다.</p>
+
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        Copyright © Gameb
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        [고도몰] 관리자 메뉴 추가하기 1 |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <meta name="google-site-verification" content="RN4FF8s7gR0MnH8v5iUghGiImkXF-N52CM0zQ0af6xU" />
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=sons-of-obsidian"></script>
+<!--    <script src="/scripts/prettify.js"></script>-->
+<!--    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">-->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/example.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            gameb
+        </a>
+    </h1>
+    <nav class="menu">
+        <a href="/" class="menu__item">
+            profile
+        </a>
+        
+            <a href="/tags/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/css" class="menu__item">
+                css<small>
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (7)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/vue" class="menu__item">
+                vue<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/php" class="menu__item">
+                php<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/solution" class="menu__item">
+                solution<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            [고도몰] 관리자 메뉴 추가하기 1
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/godomall/" rel="tag">godomall</a></li><li class="tags-list-item"><a class="tags-list-link" href="/tags/solution/" rel="tag">solution</a></li></ul>
+        </div>
+        <div class="post__content">
+            <p>고도몰 관리자의 메뉴를 추가해보겠습니다.<br>배너 등록 메뉴처럼 텍스트를 등록하고 어느 페이지에서든 치환코드를 통해 이 텍스트에 접근할 수 있는 기능을 추가하겠습니다.<br>해당 메뉴의 이름은 [텍스트 등록]이며 고도몰 관리자의 [디자인] 하위의 [디자인 설정] 하위의 3뎁스에 위치 시키겠습니다.</p>
+<h6 id="추가할-메뉴-위치"><a href="#추가할-메뉴-위치" class="headerlink" title="추가할 메뉴 위치"></a>추가할 메뉴 위치</h6><p><img src="/images/post/godomall7.gif" alt="admin추가"></p>
+<h3 id="1-DB에-3뎁스-메뉴-추가하기"><a href="#1-DB에-3뎁스-메뉴-추가하기" class="headerlink" title="1.DB에 3뎁스 메뉴 추가하기"></a>1.DB에 3뎁스 메뉴 추가하기</h3><h4 id="1-2뎁스의-번호-확인"><a href="#1-2뎁스의-번호-확인" class="headerlink" title="1) 2뎁스의 번호 확인"></a>1) 2뎁스의 번호 확인</h4><p>메뉴를 추가하기 위해서는 Phpmyadmin에서 메뉴를 추가해야 합니다.<br>2뎁스 메뉴인 [디자인 설정]의 메뉴 번호를 확인합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select adminMenuNo From `es_adminMenu` Where adminMenuDepth = 2 And adminMenuType = &#x27;d&#x27; And adminMenuName = &#x27;디자인 설정&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">godo00217</span><br></pre></td></tr></table></figure>
+
+<p>[디자인 설정]의 관리자 메뉴 고유번호는 godo00217입니다.</p>
+<h4 id="2-3뎁스의-마지막-메뉴번호-확인"><a href="#2-3뎁스의-마지막-메뉴번호-확인" class="headerlink" title="2) 3뎁스의 마지막 메뉴번호 확인"></a>2) 3뎁스의 마지막 메뉴번호 확인</h4><p>[디자인 설정] 하위 메뉴 중 마지막 메뉴의 정렬 번호를 확인합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select max(adminMenuSort) From `es_adminMenu` Where adminMenuDepth = 3 And adminMenuType = &#x27;d&#x27; And adminMenuParentNo = &#x27;godo00217&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">920</span><br></pre></td></tr></table></figure>
+
+<p>920은 마지막 메뉴의 번호입니다.</p>
+<p><img src="/images/post/godomall8.gif" alt="admin추가"></p>
+<p>위 이미지처럼 모든 메뉴는 순서로 되어 있습니다.<br>마지막 번호가 920이므로 입력될 메뉴의 번호는 1000입니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Insert Into `es_adminMenu` (adminMenuNo, adminMenuType, adminMenuProductCode, adminMenuPlusCode, </span><br><span class="line">adminMenuCode, adminMenuDepth, adminMenuParentNo, adminMenuSort, adminMenuName,</span><br><span class="line">adminMenuUrl, adminMenuDisplayType, adminMenuDisplayNo, adminMenuSettingType, adminMenuEcKind, regDt) </span><br><span class="line">Values (&#x27;prefix00001&#x27;, &#x27;d&#x27;, &#x27;godomall&#x27;, null, </span><br><span class="line">&#x27;textList&#x27;, &#x27;3&#x27;, &#x27;godo00217&#x27;, &#x27;1000&#x27;, &#x27;텍스트 관리&#x27;,</span><br><span class="line">null, &#x27;y&#x27;, null, &#x27;d&#x27;, &#x27;p&#x27;, now());</span><br></pre></td></tr></table></figure>
+
+<p>DB에 메뉴를 삽입합니다<br>adminMenuNo는 고유 접두사와 함께 숫자를 붙여줍니다.<br>기존의 DB에 삽입된 ‘godo’ 접두사를 사용하면 오류가 발생할 수 있습니다. (‘godo숫자 형태의 접두사 사용금지’)<br>메뉴 정렬 번호와 표시될 텍스트도 추가해 줍니다.<br>아래처럼 관리자에 메뉴가 추가된걸 확인할 수 있습니다.</p>
+<p><img src="/images/post/godomall9.gif" alt="admin추가"></p>
+<h3 id="2-관리자-페이지-퍼블리싱"><a href="#2-관리자-페이지-퍼블리싱" class="headerlink" title="2.관리자 페이지 퍼블리싱"></a>2.관리자 페이지 퍼블리싱</h3><p>위에서 입력한 메뉴 코드(adminMenuCode) ‘textList’ 입니다.<br>뷰페이지에서는 text_list.php 파일로 생성되어야 합니다.<br>FTP내 해당 파일이 삽입 될 경로는 아래와 같습니다.<br>[&#x2F;admin&#x2F;design&#x2F;text_list.php]<br>여기에 다른 페이지를 참고하여 퍼블리싱을 진행합니다.<br>완성된 소스와 화면은 아래와 같습니다.</p>
+<h6 id="text-list-php"><a href="#text-list-php" class="headerlink" title="text_list.php"></a>text_list.php</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;page-header js-affix affix-top&quot; style=&quot;width: auto;&quot;&gt;</span><br><span class="line">	&lt;h3&gt;텍스트 관리&lt;/h3&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;text-add&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;table-title gd-help-manual&quot;&gt;</span><br><span class="line">		텍스트 등록</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;form id=&quot;frmSearch&quot; name=&quot;&quot; method=&quot;get&quot; action=&quot;&quot;&gt;</span><br><span class="line">		&lt;input type=&quot;hidden&quot; name=&quot;detailSearch&quot; value=&quot;&quot;&gt;</span><br><span class="line">		&lt;input type=&quot;hidden&quot; name=&quot;skinType&quot; value=&quot;&quot;&gt;</span><br><span class="line">		&lt;table class=&quot;table table-cols&quot;&gt;</span><br><span class="line">			&lt;colgroup&gt;</span><br><span class="line">				&lt;col class=&quot;width-sm&quot;&gt;</span><br><span class="line">				&lt;col&gt;</span><br><span class="line">			&lt;/colgroup&gt;</span><br><span class="line">			&lt;tbody&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;영역이름&lt;/th&gt;</span><br><span class="line">				&lt;td class=&quot;form-inline&quot;&gt;</span><br><span class="line">					&lt;input type=&quot;text&quot; name=&quot;keyword&quot; value=&quot;&quot; class=&quot;form-control&quot; placeholder=&quot;영역이름을 입력해 주세요.&quot;</span><br><span class="line">					       style=&quot;width:100%&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;텍스트&lt;/th&gt;</span><br><span class="line">				&lt;td class=&quot;form-inline&quot;&gt;</span><br><span class="line">					&lt;input type=&quot;text&quot; name=&quot;keyword&quot; value=&quot;&quot; class=&quot;form-control&quot; placeholder=&quot;텍스트를 입력해 주세요.(br포함)&quot;</span><br><span class="line">					       style=&quot;width:100%&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;/tbody&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">		&lt;div class=&quot;table-btn&quot;&gt;</span><br><span class="line">			&lt;input type=&quot;submit&quot; value=&quot;검색&quot; class=&quot;btn btn-lg btn-black&quot;&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;text-list&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;table-title gd-help-manual&quot;&gt;</span><br><span class="line">		텍스트 목록</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;form id=&quot;frmList&quot; name=&quot;frmList&quot; action=&quot;&quot; method=&quot;post&quot;&gt;</span><br><span class="line">		&lt;table class=&quot;table table-rows table-fixed&quot;&gt;</span><br><span class="line">			&lt;colgroup&gt;</span><br><span class="line">				&lt;col class=&quot;width3p&quot;&gt;</span><br><span class="line">				&lt;col class=&quot;width10p&quot;&gt;</span><br><span class="line">				&lt;col class=&quot;width15p&quot;&gt;</span><br><span class="line">				&lt;col class=&quot;width45p&quot;&gt;</span><br><span class="line">				&lt;col class=&quot;width12p&quot;&gt;</span><br><span class="line">				&lt;col class=&quot;width5p&quot;&gt;</span><br><span class="line">				&lt;col class=&quot;width5p&quot;&gt;</span><br><span class="line">			&lt;/colgroup&gt;</span><br><span class="line">			&lt;thead&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;&lt;input class=&quot;js-checkall&quot; type=&quot;checkbox&quot; data-target-name=&quot;sno&quot;&gt;&lt;/th&gt;</span><br><span class="line">				&lt;th&gt;번호&lt;/th&gt;</span><br><span class="line">				&lt;th&gt;이름&lt;/th&gt;</span><br><span class="line">				&lt;th&gt;텍스트&lt;/th&gt;</span><br><span class="line">				&lt;th&gt;치환코드&lt;/th&gt;</span><br><span class="line">				&lt;th&gt;수정&lt;/th&gt;</span><br><span class="line">				&lt;th&gt;삭제&lt;/th&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;/thead&gt;</span><br><span class="line">			&lt;tbody class=&quot;text-center&quot;&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;input name=&quot;sno[]&quot; type=&quot;checkbox&quot; value=&quot;8&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;1&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;메인상단&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;Hello World!  Good Morning!&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;[치환코드]&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;a href=&quot;./banner_register.php?sno=8&quot; class=&quot;btn btn-white btn-sm&quot; role=&quot;button&quot;&gt;수정&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;a href=&quot;./banner_register.php?sno=8&quot; class=&quot;btn btn-white btn-sm&quot; role=&quot;button&quot;&gt;삭제&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;input name=&quot;sno[]&quot; type=&quot;checkbox&quot; value=&quot;8&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;1&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;메인상단&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;Hello World!  Good Morning!&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;[치환코드]&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;a href=&quot;./banner_register.php?sno=8&quot; class=&quot;btn btn-white btn-sm&quot; role=&quot;button&quot;&gt;수정&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;a href=&quot;./banner_register.php?sno=8&quot; class=&quot;btn btn-white btn-sm&quot; role=&quot;button&quot;&gt;삭제&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;input name=&quot;sno[]&quot; type=&quot;checkbox&quot; value=&quot;8&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;1&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;메인상단&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;Hello World!  Good Morning!&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;[치환코드]&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;a href=&quot;./banner_register.php?sno=8&quot; class=&quot;btn btn-white btn-sm&quot; role=&quot;button&quot;&gt;수정&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;a href=&quot;./banner_register.php?sno=8&quot; class=&quot;btn btn-white btn-sm&quot; role=&quot;button&quot;&gt;삭제&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;/tbody&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">		&lt;div class=&quot;center&quot;&gt;</span><br><span class="line">			&lt;nav&gt;</span><br><span class="line">				&lt;ul class=&quot;pagination pagination-sm&quot;&gt;</span><br><span class="line">					&lt;li class=&quot;active&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">				&lt;/ul&gt;</span><br><span class="line">			&lt;/nav&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="최종-화면"><a href="#최종-화면" class="headerlink" title="최종 화면"></a>최종 화면</h6><p><img src="/images/post/godomall10.gif" alt="admin추가"></p>
+
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        Copyright © Gameb
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>
