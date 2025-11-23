@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        실무에서 자주 쓰는 문자/숫자(String/Number) 문법 |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <meta name="google-site-verification" content="RN4FF8s7gR0MnH8v5iUghGiImkXF-N52CM0zQ0af6xU" />
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=sons-of-obsidian"></script>
+<!--    <script src="/scripts/prettify.js"></script>-->
+<!--    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">-->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/example.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            gameb
+        </a>
+    </h1>
+    <nav class="menu">
+        
+            <a href="/tags/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/css" class="menu__item">
+                css<small>
+                    
+                        
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (7)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/canvas" class="menu__item">
+                canvas<small>
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/solution" class="menu__item">
+                solution<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            실무에서 자주 쓰는 문자/숫자(String/Number) 문법
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+        </div>
+        <div class="post__content">
+            <h3 id="숫자"><a href="#숫자" class="headerlink" title="숫자"></a>숫자</h3><h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h4><p>문자를 숫자로 변환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let numberToString = 1541;</span><br><span class="line">var str = numberToString.toString(); </span><br><span class="line">// &quot;1541&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ceil-floor-round"><a href="#ceil-floor-round" class="headerlink" title="ceil(), floor(), round()"></a>ceil(), floor(), round()</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.ceil(1.222); // 2 올림</span><br><span class="line">Math.floor(1.222); // 1 내림</span><br><span class="line">Math.round(1.5); // 2 반올림</span><br></pre></td></tr></table></figure>
+
+<h4 id="toFixed"><a href="#toFixed" class="headerlink" title="toFixed()"></a>toFixed()</h4><p>소수점을 자릅니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.222.toFixed(1); // 1.2</span><br><span class="line">1.222.toFixed(2); // 1.22</span><br></pre></td></tr></table></figure>
+
+<h3 id="문자"><a href="#문자" class="headerlink" title="문자"></a>문자</h3><h4 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h4><p>문자열을 숫자형으로 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let strToNum = &quot;1541&quot;;</span><br><span class="line">Number(strToNum);</span><br><span class="line">// 1541</span><br></pre></td></tr></table></figure>
+
+<h4 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h4><p>문자열을 특정 진수의 숫자로 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let strToNum = &#x27;1541&#x27;;</span><br><span class="line">parseInt(strToNum, 10); // 1541</span><br><span class="line">parseInt(strToNum, 16);  // 5441</span><br></pre></td></tr></table></figure>
+
+<h4 id=""><a href="#" class="headerlink" title="+, *"></a>+, *</h4><p>문자열을 숫자로 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let strToNum = &#x27;1541&#x27;;</span><br><span class="line">strToNum * 1; // 1541</span><br><span class="line">+strToNum; // 1541</span><br></pre></td></tr></table></figure>
+
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h4><p>문자열을 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.replace(&#x27;Hello&#x27;, &#x27;My&#x27;);</span><br><span class="line">// &quot;My World&quot;</span><br><span class="line"></span><br><span class="line">const regex = /Hello/i;</span><br><span class="line">console.log(str.replace(regex, &quot;New&quot;));</span><br><span class="line">// &quot;New World&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="replaceAll"><a href="#replaceAll" class="headerlink" title="replaceAll()"></a>replaceAll()</h4><p>모든 문자열을 바꿔 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World, Hello Coding!&quot;;</span><br><span class="line">str.replaceAll(&#x27;Hello&#x27;, &#x27;My&#x27;);</span><br><span class="line">// &quot;My World, My Coding&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p>특정 구분자를 기준으로 문자열을 배열로 만듭니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello New World&quot;;</span><br><span class="line">str.split(&quot; &quot;);</span><br><span class="line">// [&quot;Hello&quot;, &quot;New&quot;, &quot;World&quot;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h4><p>부분 문자열을 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.substring(1, 3);</span><br><span class="line">// &quot;el&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h4><p>소문자를 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.toLowerCase();</span><br><span class="line">// &quot;hello world&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h4><p>대문자를 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;Hello World&quot;;</span><br><span class="line">str.toUpperCase();</span><br><span class="line">// &quot;HELLO WORLD&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="tring-trimEnd-tringStart"><a href="#tring-trimEnd-tringStart" class="headerlink" title="tring(), trimEnd(), tringStart()"></a>tring(), trimEnd(), tringStart()</h4><p>공백을 제거하고 새로운 문자열을 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const str = &quot;   Hello World!   &quot;;</span><br><span class="line">str.trim(); // &quot;Hello World!&quot;</span><br><span class="line">str.trimEnd(); // &quot;   Hello World!&quot;</span><br><span class="line">str.trimStart(); // &quot;Hello World!   &quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="padStart"><a href="#padStart" class="headerlink" title="padStart()"></a>padStart()</h4><p>특정 길이만큼 문자열로 채워줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const shortMonth = &quot;3&quot;;</span><br><span class="line">shortMonth.padStart(2, &quot;0&quot;);</span><br><span class="line">// &quot;03&quot;</span><br></pre></td></tr></table></figure>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        Copyright © Gameb
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>

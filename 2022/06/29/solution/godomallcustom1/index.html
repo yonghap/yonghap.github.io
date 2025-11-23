@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        [고도몰] 쇼핑몰 커스터마이징 세팅 |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <meta name="google-site-verification" content="RN4FF8s7gR0MnH8v5iUghGiImkXF-N52CM0zQ0af6xU" />
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=sons-of-obsidian"></script>
+<!--    <script src="/scripts/prettify.js"></script>-->
+<!--    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">-->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/example.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            gameb
+        </a>
+    </h1>
+    <nav class="menu">
+        
+            <a href="/tags/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/css" class="menu__item">
+                css<small>
+                    
+                        
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (7)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/canvas" class="menu__item">
+                canvas<small>
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/solution" class="menu__item">
+                solution<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            [고도몰] 쇼핑몰 커스터마이징 세팅
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/godomall/" rel="tag">godomall</a></li><li class="tags-list-item"><a class="tags-list-link" href="/tags/solution/" rel="tag">solution</a></li></ul>
+        </div>
+        <div class="post__content">
+            <p>고도몰 커스터마이징을 위한 기본 세팅입니다.<br>아래 개발 가이드를 참고합니다.<br><a href="http://doc.godomall5.godomall.com/Getting_Started/Architecture" target="_blank">고도몰 개발 가이드</a><br><a href="http://doc.godomall5.godomall.com/godo/coding/index.html" target="_blank">고도몰 코딩 컨벤션</a></p>
+<p>고도몰5 Pro는 MVC(Model, View, Controller) 패턴으로 만들어져 있습니다.<br>Model는 데이터베이스 연동<br>View는 화면의 출력 담당,<br>Controller는 Model과 View의 동작 및 연결을 담당합니다.</p>
+<h3 id="기본-개념"><a href="#기본-개념" class="headerlink" title="기본 개념"></a>기본 개념</h3><p>들어가기 전에 고도몰 개발 가이드에서 아래 개념을 숙지해 둡니다.</p>
+<p><img src="/images/post/godomall1.gif" alt="1"></p>
+<h4 id="Controller-만들기"><a href="#Controller-만들기" class="headerlink" title="Controller 만들기"></a>Controller 만들기</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Controller 파일 생성</span><br><span class="line">/front/폴더명/파일명Controller.php</span><br></pre></td></tr></table></figure>
+
+<h4 id="View-만들기"><a href="#View-만들기" class="headerlink" title="View 만들기"></a>View 만들기</h4><p>View 페이지도 만들어 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// View 파일 생성</span><br><span class="line">/user/data/skin/front/스킨명/폴더명/파일명.html</span><br></pre></td></tr></table></figure>
+
+<p>View 파일이 없으면 컨트롤러 오류가 납니다.<br><a target="_blank" rel="noopener" href="http://example.com/%ED%8F%B4%EB%8D%94%EB%AA%85/%ED%8C%8C%EC%9D%BC%EB%AA%85">http://example.com/폴더명/파일명</a> 으로 접속하여 확인합니다.</p>
+<ul>
+<li>컨트롤러 생성과 작성 (기존 컨트롤러 수정일 경우 상속)</li>
+<li>View 작성</li>
+<li>동작 확인</li>
+</ul>
+<p>새로운 컨트롤러의 추가나 기존 컨트롤러의 수정이나 모두 로직은 비슷합니다.<br>고도몰 개발 가이드에 Controller, DB, Routing, Security까지 잘 나와 있으니 꼭 참고합니다.</p>
+
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        Copyright © Gameb
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>
