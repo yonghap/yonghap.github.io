@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        TypeScript : 제네릭(generic) |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <meta name="google-site-verification" content="RN4FF8s7gR0MnH8v5iUghGiImkXF-N52CM0zQ0af6xU" />
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=sons-of-obsidian"></script>
+<!--    <script src="/scripts/prettify.js"></script>-->
+<!--    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">-->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/example.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            gameb
+        </a>
+    </h1>
+    <nav class="menu">
+        
+            <a href="/tags/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/css" class="menu__item">
+                css<small>
+                    
+                        
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (9)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/typescript" class="menu__item">
+                typescript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/canvas" class="menu__item">
+                canvas<small>
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            TypeScript : 제네릭(generic)
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
+        </div>
+        <div class="post__content">
+            <h3 id="제네릭이란"><a href="#제네릭이란" class="headerlink" title="제네릭이란?"></a>제네릭이란?</h3><p>함수의 매개변수처럼 타입을 매개변수로 넘기고 그 타입을 그대로 반환받는것을 의미 합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function getText&lt;T&gt;(text: T) : T &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line">getText&lt;string&gt;(&#x27;Hello&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>T로 선언된 부분이 모두 string으로 치환됩니다.<br>제네릭 타입을 string으로 지정하였기 때문에 코드 작성시에도 string으로 추론합니다.<br>추론을 통해 string과 관련된 메소드의 안내를 받을 수 있습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function getText&lt;string&gt;(text: string): string &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>결과적으로 아래와 같이 선언된 것과 같습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function getText(text: string): string &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="왜-사용할까"><a href="#왜-사용할까" class="headerlink" title="왜 사용할까?"></a>왜 사용할까?</h3><p>제일 큰 목적으로 코드 중복의 문제입니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function getText(text: string): string &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function getNumber(num: number): number &#123;</span><br><span class="line">    return num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위 함수는 매개변수로 받은 값을 그대로 리턴합니다.<br>기능은 동일하지만 타입이 달라 함수를 두 번 정의했습니다.<br>물론 any를 사용해도 되지만 any를 사용할 경우 타입스크립트를 사용하는 의미가 없어집니다.</p>
+<h3 id="인터페이스에서의-제네릭"><a href="#인터페이스에서의-제네릭" class="headerlink" title="인터페이스에서의 제네릭"></a>인터페이스에서의 제네릭</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">interface Dropdown&lt;T&gt; &#123;</span><br><span class="line">    value: T,</span><br><span class="line">    selected : boolean</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var product: Dropdown&lt;string&gt; = &#123;</span><br><span class="line">    value: &#x27;Nike Shoes&#x27;,</span><br><span class="line">    selected: false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var stock: Dropdown&lt;number&gt; = &#123;</span><br><span class="line">    value: 250,</span><br><span class="line">    selected: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h3><p>제네릭을 통해 특정 타입만 받고 싶을 때는 extends를 사용합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function getText&lt;T extends string&gt;(text: T) &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 숫자로된 length 속성을 가지는 제네릭</span><br><span class="line">function withLength&lt;T extends &#123; length: number &#125;&gt;(value: T) &#123;</span><br><span class="line">    return value.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="keyof"><a href="#keyof" class="headerlink" title="keyof"></a>keyof</h3><p>keyof를 활용해 타입 제약도 가능합니다.<br>keyof는 특정 타입의 키 값을 추출해서 문자열 유니온 타입으로 변환해 줍니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">type DeveloperKeys = keyof &#123; name: string, skill: string &#125;</span><br><span class="line"></span><br><span class="line">const firstColumn: DeveloperKeys = &quot;name&quot;</span><br><span class="line"></span><br><span class="line">function printKeys&lt;T extends keyof &#123; name: string; skill: string &#125;&gt;(value: T) &#123;</span><br><span class="line">    console.log(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printKeys(&#x27;name&#x27;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function getKeyOf&lt;T extends keyof &#123; name: string, num: number &#125;&gt;(value: T) &#123;</span><br><span class="line">    console.log(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="주의점"><a href="#주의점" class="headerlink" title="주의점"></a>주의점</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function printText&lt;T&gt;(text: T) &#123;</span><br><span class="line">    console.log(text.length)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printText&lt;string&gt;(&#x27;Hello&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>위 함수는 string으로 받아 제대로 출력될것처럼 보입니다.<br>실제로는 어떤 타입이 들어오지 모르므로 타입 추론이 되지 않습니다.<br>이때는 extends와 같은 타입 제약을 사용합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function printText&lt;T&gt;(text: T[]) &#123;</span><br><span class="line">    console.log(text.length)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printText&lt;string&gt;([&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;]); // 3</span><br><span class="line">printText&lt;number&gt;([100]); // 1</span><br><span class="line">printText([true,false]); // 2</span><br></pre></td></tr></table></figure>
+
+<p>함수 매개변수 제네릭에 []을 붙여줘도 됩니다.<br>이때는 배열 형태의 데이터를 넣어야 합니다.<br>printText([true,false])에 boolean 타입이 선언되지는 않았지만 타입과 맞게 연결되어 있으면 선언되어 있는것처럼 동작 합니다.</p>
+
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        Copyright © Gameb
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>
