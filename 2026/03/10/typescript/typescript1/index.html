@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61D4KVQ7S"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-R61D4KVQ7S');
+</script>
+    
+    <title>
+        TypeScript : 기본 타입 |
+        
+        GAMEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="icon" href="/favicon.png">
+    
+    <meta name="google-site-verification" content="RN4FF8s7gR0MnH8v5iUghGiImkXF-N52CM0zQ0af6xU" />
+    <script src="/scripts/jquery-latest.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=sons-of-obsidian"></script>
+<!--    <script src="/scripts/prettify.js"></script>-->
+<!--    <link rel="stylesheet" href="/scripts/tomorrow-night.min.css">-->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/example.css">
+
+    <script>
+		$(document).ready(function() {
+			$('pre').addClass('prettyprint');
+		});
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+    <h1 class="logo">
+        <a href="/">
+            gameb
+        </a>
+    </h1>
+    <nav class="menu">
+        
+            <a href="/tags/html" class="menu__item">
+                html<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (4)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/css" class="menu__item">
+                css<small>
+                    
+                        
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/javascript" class="menu__item">
+                javascript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (9)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/typescript" class="menu__item">
+                typescript<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (6)
+                            
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/jquery" class="menu__item">
+                jquery<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/canvas" class="menu__item">
+                canvas<small>
+                    
+                        
+                            
+                                (1)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+            <a href="/tags/mysql" class="menu__item">
+                mysql<small>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                                (2)
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                </small>
+            </a>
+        
+    </nav>
+</header>
+
+        <div id="container" class="container">
+            <div class="content">
+                <section class="section">
+    <div class="post">
+        <h2 class="post__title">
+            TypeScript : 기본 타입
+        </h2>
+        <div class="post__category">
+            <ul class="tags-list" itemprop="keywords"><li class="tags-list-item"><a class="tags-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
+        </div>
+        <div class="post__content">
+            <h3 id="문자열-타입-string"><a href="#문자열-타입-string" class="headerlink" title="문자열 타입: string"></a>문자열 타입: string</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let name: string = &#x27;Park&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="숫자-타입-number"><a href="#숫자-타입-number" class="headerlink" title="숫자 타입: number"></a>숫자 타입: number</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let age: number = 100;</span><br></pre></td></tr></table></figure>
+
+<h3 id="진위-타입-boolean"><a href="#진위-타입-boolean" class="headerlink" title="진위 타입: boolean"></a>진위 타입: boolean</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let isMan: boolean = true;</span><br></pre></td></tr></table></figure>
+
+<h3 id="객체-타입-object"><a href="#객체-타입-object" class="headerlink" title="객체 타입: object"></a>객체 타입: object</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let areas: object = &#123; name : &quot;SEOUL&quot;, location : &quot;KOR&quot; &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="배열-타입-Array"><a href="#배열-타입-Array" class="headerlink" title="배열 타입: Array"></a>배열 타입: Array</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 문자열 배열</span><br><span class="line">let fruits: Array&lt;string&gt; = [&#x27;사과&#x27;,&#x27;딸기&#x27;,&#x27;바나나&#x27;];</span><br><span class="line">let fruits: string[] = [&#x27;딸기&#x27;,&#x27;바나나&#x27;,&#x27;사과&#x27;];</span><br><span class="line"></span><br><span class="line">// 숫자 배열</span><br><span class="line">let numbers: Array&lt;number&gt; = [1,2,3];</span><br><span class="line">let numbers: number[] = [3,2,1];</span><br><span class="line"></span><br><span class="line">// 읽기 전용 배열</span><br><span class="line">let arr: ReadonlyArray&lt;number&gt; = [1,2,3];</span><br></pre></td></tr></table></figure>
+
+<h3 id="튜플-타입-tuple"><a href="#튜플-타입-tuple" class="headerlink" title="튜플 타입: tuple"></a>튜플 타입: tuple</h3><p>튜플은 특정한 형태를 갖는 배열입니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let items: [string, number] = [&#x27;hello&#x27;,1];</span><br></pre></td></tr></table></figure>
+
+<h3 id="any"><a href="#any" class="headerlink" title="any"></a>any</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let name: any = &#x27;Park&#x27;;</span><br><span class="line">let age: any = 100;</span><br></pre></td></tr></table></figure>
+
+<h3 id="enum"><a href="#enum" class="headerlink" title="enum"></a>enum</h3><p>특정 값들의 집합입니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enum fruits &#123;</span><br><span class="line">  banana,</span><br><span class="line">  apple,</span><br><span class="line">  orange</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>enum은 기본적으로 숫자로 접근할 수 있습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let most: fruits = fruits[0];</span><br></pre></td></tr></table></figure>
+
+<p>임의로 index 값을 변경할 수도 있습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enum fruits &#123;</span><br><span class="line">  banana,</span><br><span class="line">  apple = 2,</span><br><span class="line">  orange</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(fruits[&quot;banana&quot;]); // 0</span><br><span class="line">console.log(fruits[&quot;apple&quot;]); // 2</span><br></pre></td></tr></table></figure>
+
+<h4 id="문자형-enum"><a href="#문자형-enum" class="headerlink" title="문자형 enum"></a>문자형 enum</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enum Arrows &#123;</span><br><span class="line">  UP = &quot;UP&quot;,</span><br><span class="line">  DOWN = &quot;DOWN&quot;,</span><br><span class="line">  LEFT = &quot;LEFT&quot;,</span><br><span class="line">  RIGHT = &quot;RIGHT&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(Arrows[&quot;UP&quot;]); // UP</span><br></pre></td></tr></table></figure>
+
+<h3 id="null-undefined"><a href="#null-undefined" class="headerlink" title="null, undefined"></a>null, undefined</h3><p>null과 undefined도 정의 할 수 있습니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let empty: null = null;</span><br><span class="line">let nothing: undefined;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8286119789134861"
+                crossorigin="anonymous"></script>
+        <!-- 상하단 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8286119789134861"
+             data-ad-slot="2771009740"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+		    (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="footer__copyright">
+        Copyright © Gameb
+    </div>
+    <script>
+		$(function () {
+			setTimeout(function () {
+				PR.prettyPrint();
+			},10);
+		});
+    </script>
+</footer>
+    </div>
+</body>
+</html>
